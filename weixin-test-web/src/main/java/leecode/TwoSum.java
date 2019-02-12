@@ -37,6 +37,16 @@ public class TwoSum {
     public static boolean judgeSequareNum(int number){
         int i=0;
         int j= (int)Math.sqrt(number);
+        while (i<=j){
+            int sum = i*i+j*j;
+            if(sum == number){
+                return true;
+            }else if (sum > number) {
+                j--;
+            } else {
+                i++;
+            }
+        }
         return false;
     }
 
@@ -49,7 +59,7 @@ public class TwoSum {
 //            System.out.println("--/--" + ints[i]);
 //        }
 
-        System.out.println("---"+(int)Math.sqrt(5));
+        System.out.println("---"+judgeSequareNum(13));
     }
 
 
