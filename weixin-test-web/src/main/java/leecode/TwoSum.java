@@ -34,7 +34,7 @@ public class TwoSum {
      * Output: True
      * Explanation: 1 * 1 + 2 * 2 = 5
      */
-    public static boolean judgeSequareNum(int number){
+    public static boolean judgeSquareNum(int number){
         int i=0;
         int j= (int)Math.sqrt(number);
         while (i<=j){
@@ -59,7 +59,7 @@ public class TwoSum {
 //            System.out.println("--/--" + ints[i]);
 //        }
 
-        System.out.println("---"+judgeSequareNum(13));
+        System.out.println("---"+judgeSquareNum(13));
     }
 
 
