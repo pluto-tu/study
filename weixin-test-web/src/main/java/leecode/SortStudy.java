@@ -33,11 +33,32 @@ public class SortStudy<T extends Comparable<T>> extends Sort<T> {
         }
     }
 
+    /**
+     * 冒泡排序
+     *
+     * 从左到右不断交换相邻逆序的元素，在一轮的循环之后，可以让未排序的最大元素上浮到右侧。
+     * 在一轮循环中，如果没有发生交换，就说明数组已经是有序的，此时可以直接退出。
+     *
+     */
+    public void ebullitionSort(T[] nums){
+        int n = nums.length;
+        boolean isFinish = false;
+        for (int i=n-1; i >0 && !isFinish ;i--){
+             isFinish = true;
+            for(int j=0;j<i;j++){
+                if(less(nums[j+1],nums[j])){
+                    isFinish = false;
+                    swap(nums, j, j+1);
+                }
+            }
+        }
+    }
+
 
     public static void main(String[] args) {
         SortStudy sortStudy = new SortStudy();
         Integer[] ints = {7, 3, 5, 1};
-        sortStudy.selectSort(ints);
+        sortStudy.ebullitionSort(ints);
         System.out.println("---"+ints[0]+ints[1]+ints[2]+ints[3]);
     }
 }
