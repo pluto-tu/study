@@ -89,16 +89,5 @@ public class SortStudy<T extends Comparable<T>> extends Sort<T> {
 
 
 
-<<<<<<< HEAD
 
-
-
-
-
-
-
-
-
-=======
->>>>>>> e0e7192198c542b400c1d3b28384a2e1a27dd802
 }
