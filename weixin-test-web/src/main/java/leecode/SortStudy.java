@@ -55,15 +55,41 @@ public class SortStudy<T extends Comparable<T>> extends Sort<T> {
     }
 
 
+    /**
+     * 插入排序
+     * 每次都将当前元素插入到左侧已经排序的数组中，使得插入之后左侧数组依然有序
+     *
+     * @param nums
+     */
+    public void insertSort(T[] nums){
+        int n = nums.length;
+        for(int i = 1;i<n;i++){
+            for(int j=i;j>0;j--){
+                if(less(nums[j],nums[j-1])){
+                    System.out.println("---"+nums[j]+","+nums[j-1]);
+                    swap(nums,j,j-1);
+                }
+            }
+        }
+
+    }
+
+    /**
+     *
+     * @param args
+     */
+
+
     public static void main(String[] args) {
         SortStudy sortStudy = new SortStudy();
         Integer[] ints = {7, 3, 5, 1};
-        sortStudy.ebullitionSort(ints);
-        System.out.println("---"+ints[0]+ints[1]+ints[2]+ints[3]);
+        sortStudy.insertSort(ints);
+        System.out.println("---aw"+ints[0]+ints[1]+ints[2]+ints[3]);
     }
 
 
 
+<<<<<<< HEAD
 
 
 
@@ -73,4 +99,6 @@ public class SortStudy<T extends Comparable<T>> extends Sort<T> {
 
 
 
+=======
+>>>>>>> e0e7192198c542b400c1d3b28384a2e1a27dd802
 }
