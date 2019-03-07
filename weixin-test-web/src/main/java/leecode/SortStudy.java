@@ -74,6 +74,11 @@ public class SortStudy<T extends Comparable<T>> extends Sort<T> {
 
     }
 
+    /**
+     *
+     * @param args
+     */
+
 
     public static void main(String[] args) {
         SortStudy sortStudy = new SortStudy();
