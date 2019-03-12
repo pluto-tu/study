@@ -39,7 +39,6 @@ public class SortStudy<T extends Comparable<T>> extends Sort<T> {
     }
 
 
-
     /**
      * 选择排序
      * <p>
@@ -53,12 +52,12 @@ public class SortStudy<T extends Comparable<T>> extends Sort<T> {
         int n = nums.length;
         for (int i = 0; i < n; i++) {
             int min = i;
-            for (int j = i + 1; j < n; j++) {
-                if (lessNums(nums[j], nums[min])) {
+            for(int j =i+1;j<n;j++){
+                if(lessNums(nums[j],nums[min])){
                     min = j;
                 }
             }
-            swapNums(nums, i, min);
+            swap(nums,i,min);
         }
     }
 
@@ -70,19 +69,7 @@ public class SortStudy<T extends Comparable<T>> extends Sort<T> {
      * 在一轮循环中，如果没有发生交换，就说明数组已经是有序的，此时可以直接退出。
      */
     public void ebullitionSort(T[] nums) {
-        int n = nums.length;
-        boolean isFinish = false;
-        for (int i = n - 1; i > 0 && !isFinish; i--) {
-            isFinish = true;
 
-            for (int j = 0; j < i; j++) {
-                if (less(nums[j + 1], nums[j])) {
-                    swapNums(nums, j + 1, j);
-                    isFinish = false;
-                }
-            }
-
-        }
 
     }
 
@@ -94,14 +81,7 @@ public class SortStudy<T extends Comparable<T>> extends Sort<T> {
      * @param nums
      */
     public void insertSort(T[] nums) {
-        int n = nums.length;
-        for (int i = 1; i < n; i++) {
-            for (int j = i; j < n; j++) {
-                if (lessNums(nums[j], nums[j - 1])) {
-                    swapNums(nums, j, j - 1);
-                }
-            }
-        }
+
 
     }
 
@@ -117,40 +97,14 @@ public class SortStudy<T extends Comparable<T>> extends Sort<T> {
      * @param nums
      */
     public void qucikSort(T[] nums, int start, int end) {
-        int i = start;
-        int j = end;
-        if(i>j){
-            return ;
-        }
 
-        T temp =  nums[start];
-
-        while (i<j){
-            while(lessOrEqualNums(temp,nums[j]) && i<j){
-                j--;
-            }
-
-            while(lessOrEqualNums(nums[i],temp) && i<j){
-                i++;
-            }
-
-            if(i<j){
-                swapNums(nums,i,j);
-            }
-        }
-        swapNums(nums,start,j);
-
-        qucikSort(nums,start,j-1);
-        qucikSort(nums,j+1,end);
     }
-
-
 
 
     public static void main(String[] args) {
         SortStudy sortStudy = new SortStudy();
         Integer[] nums = {3, 1, 6, 2, 5, 8, 4, 7};
-        sortStudy.qucikSort(nums,0,nums.length-1);
+        sortStudy.selectSort(nums);
 
         for (int i = 0; i < nums.length; i++) {
             System.out.print(nums[i] + "--");
