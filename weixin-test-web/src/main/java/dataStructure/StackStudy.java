@@ -4,6 +4,14 @@ package dataStructure;
 /**
  * Created by tubangwu on 2018/7/25.
  *
+ * 后进先出 栈
+ * public class Stack(Item) implementsIterable<Item>
+ *    Stack() 创建空栈
+ *    void push(Itme item) 添加一个元素
+ *    Item pop() 删除最近添加的元素
+ *    boolean isEmpty() 栈是否为空
+ *    int size()  栈中的元素数量
+ *
  * @author tubangwu
  */
 public class StackStudy<Item> {
