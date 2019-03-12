@@ -1,6 +1,9 @@
 package test;
 
 
+import dataStructure.tree.BinaryTree;
+import dataStructure.tree.Node;
+
 import java.util.LinkedList;
 import java.util.Objects;
 import java.util.Queue;
@@ -15,29 +18,26 @@ public class Tree {
     /**
      * 按层遍历
      */
-    public Queue<TreeNode> traverse(TreeNode treeNode) {
-        Queue<TreeNode> queue = new LinkedList<TreeNode>();
-
-        if (Objects.isNull(treeNode)) {
-            return null;
-        } else {
-            //根节点入队列
-            queue.offer(treeNode);
-            for (int i = 0; i < queue.size(); i++) {
-                //队列第一根元素 先进入
-                TreeNode temp = queue.poll();
-                if (Objects.nonNull(temp.left)) {
-                    queue.offer(temp.left);
-                }
-
-                if (Objects.nonNull(temp.right)) {
-                    queue.offer(temp.right);
-                }
-
+    public static Queue<TreeNode> traverse(TreeNode treeNode) {
+        if (treeNode == null){ return null;
+        }
+        LinkedList<TreeNode> list = new LinkedList<TreeNode>();
+        list.add(treeNode);
+        TreeNode currentNode;
+        while (!list.isEmpty()) {
+            currentNode = list.poll();
+            System.out.println(currentNode.val);
+            if (currentNode.left != null) {
+                list.add(currentNode.left);
+            }
+            if (currentNode.right != null) {
+                list.add(currentNode.right);
             }
         }
-        return queue;
+
+        return list;
     }
+
 
     /**
      * 树形结构
@@ -47,9 +47,31 @@ public class Tree {
         TreeNode left;
         TreeNode right;
 
-        TreeNode(int x) {
-            val = x;
+        TreeNode(int x, TreeNode left, TreeNode right) {
+            this.val = x;
+            this.left = left;
+            this.right = right;
         }
+    }
+
+    public TreeNode init() {
+        TreeNode D = new TreeNode(4, null, null);
+        TreeNode E = new TreeNode(5, null, null);
+        TreeNode F = new TreeNode(6, null, null);
+        TreeNode G = new TreeNode(7, null, null);
+
+        TreeNode B = new TreeNode(2, D, E);
+        TreeNode C = new TreeNode(3, F, G);
+        TreeNode A = new TreeNode(1, B, C);
+        return A;
+    }
+
+    public static void main(String[] args) {
+        Tree tree = new Tree();
+        TreeNode root = tree.init();
+        Queue<TreeNode> traverse = traverse(root);
+        System.out.println(traverse.size());
+
     }
 
 
