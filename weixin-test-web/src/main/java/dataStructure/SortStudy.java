@@ -1,4 +1,6 @@
-package leecode;
+package dataStructure;
+
+import leecode.Sort;
 
 /**
  * @author tubangwu
