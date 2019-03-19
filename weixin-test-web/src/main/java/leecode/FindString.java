@@ -11,11 +11,14 @@ import java.util.List;
 public class FindString {
 
     public static void main(String[] args) {
-        String s="ababc";
-        System.out.println(findCharMost(s));
+        String s="abab";
+        String ss="baba";
+        System.out.println("------"+findCharMost1(s)+"---"+findCharMost1(ss));
     }
 
-    public static char findCharMost(String s) {
+
+
+    public static char findCharMost1(String s) {
         //记录字符串中的字符
         List<Character> list=new ArrayList<>();
         //记录对应字符出现的次数
@@ -46,6 +49,7 @@ public class FindString {
             }
         }
         return list.get(j);
+
     }
 
 
