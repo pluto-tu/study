@@ -8,6 +8,9 @@ import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.List;
+import java.util.Set;
+
 /**
  * Created by tubangwu on 2017/6/11.
  */
@@ -18,6 +21,9 @@ public class RedisTest {
 
     @Autowired
     private RedisTemplate<String, Long> longRedisTemplate;
+
+    @Autowired
+    private RedisTemplate redisTemplate;
 
     @Autowired
     private RedisTemplate<String, String> stringRedisTemplate;
@@ -36,6 +42,9 @@ public class RedisTest {
         operations2.set(key,"123");
 //        Long s = operations.get(key);
 //        System.out.println(s);
+
+         Set<String> keys = redisTemplate.keys("*");
+         List<String> list = redisTemplate.opsForValue().multiGet(keys);
     }
 
 

@@ -11,19 +11,14 @@ import java.util.List;
 public class FindString {
 
     public static void main(String[] args) {
-<<<<<<< HEAD
         String s="abab";
         String ss="baba";
-        System.out.println("------"+findCharMost1(s)+"---"+findCharMost1(ss));
+        System.out.println("------"+findCharMost(s)+"---"+getMax(ss));
     }
 
 
 
-    public static char findCharMost1(String s) {
-=======
-        String s="aabbcccbda";
-        System.out.println("----"+findCharMost(s));
-    }
+
 
     /**
      * 字符串中  最先满足次数最大
@@ -32,7 +27,6 @@ public class FindString {
      * @return
      */
     public static char findCharMost(String s) {
->>>>>>> fc62bf4f45937df12d50cb1aecc54cd94ef00d0a
         //记录字符串中的字符
         List<Character> list=new ArrayList<>();
         //记录对应字符出现的次数
