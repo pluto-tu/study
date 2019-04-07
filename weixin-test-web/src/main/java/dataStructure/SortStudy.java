@@ -151,7 +151,7 @@ public class SortStudy<T extends Comparable<T>> extends Sort<T> {
         SortStudy sortStudy = new SortStudy();
         Integer[] nums = {3, 1, 6, 2, 5, 8, 4, 7};
        // sortStudy.quickSort(nums,0,nums.length-1);
-
+        System.out.println("------");
 //        for (int i = 0; i < nums.length; i++) {
 //            System.out.print(nums[i] + "--");
 //        }
