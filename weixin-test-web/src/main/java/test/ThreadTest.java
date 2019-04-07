@@ -9,7 +9,7 @@ package test;
  * 加 volatile 第二个线程修改了通知第一个线程 不加 第一个线程不知道修改了
  * （在第一个线程不读取或操作running 这个关键字的时候 这样就回去读取最新的值了）
  *
- * 如果 第一个线程去读取running的值 就会督导最新的值
+ * 如果 第一个线程去读取running的值 就会读到最新的值
  *          while (running) {
  *                 System.out.println（running）
  *                 counter++;
