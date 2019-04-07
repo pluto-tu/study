@@ -35,10 +35,10 @@ public class SortTest {
         int[] nums = {3, 1, 6, 2, 5, 8, 4, 7};
         sortTest.selectSort(nums);
 
-        System.out.println();
+
 
         for (int i = 0; i < nums.length; i++){
-            //System.out.println(nums[i] + "--")
+            System.out.println(nums[i] + "--");
 
         }
     }
