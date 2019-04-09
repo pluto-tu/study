@@ -81,14 +81,14 @@ public class NodeStudy {
                 //交换p1 p2
                 int temp = p1.data;
                 p1.data = p2.data;
-                p2.data =temp;
+                p2.data = temp;
 
             }
-            p2 =p2.next;
+            p2 = p2.next;
 
         }
 
-        if(p1 != head){
+        if (p1 != head) {
             int temp = p1.data;
             p1.data = head.data;
             head.data = temp;
