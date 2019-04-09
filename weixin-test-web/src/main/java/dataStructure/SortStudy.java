@@ -98,7 +98,7 @@ public class SortStudy<T extends Comparable<T>> extends Sort<T> {
     public void insertSort(T[] nums) {
         int l = nums.length;
         for (int i=1;i<l;i++){
-            for(int j = i;j<l;j++){
+            for(int j = i;j>0;j--){
                 if(lessNums(nums[j] , nums[j-1])){
                     swapNums(nums,j,j-1);
                 }
@@ -150,11 +150,12 @@ public class SortStudy<T extends Comparable<T>> extends Sort<T> {
     public static void main(String[] args) {
         SortStudy sortStudy = new SortStudy();
         Integer[] nums = {3, 1, 6, 2, 5, 8, 4, 7};
-       // sortStudy.quickSort(nums,0,nums.length-1);
+       sortStudy.quickSort(nums,0,nums.length-1);
+        //sortStudy.insertSort(nums);
         System.out.println("------");
-//        for (int i = 0; i < nums.length; i++) {
-//            System.out.print(nums[i] + "--");
-//        }
+        for (int i = 0; i < nums.length; i++) {
+            System.out.print(nums[i] + "--");
+        }
     }
 
 
