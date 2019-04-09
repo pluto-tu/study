@@ -79,9 +79,9 @@ public class SortStudy<T extends Comparable<T>> extends Sort<T> {
         boolean isFinish = false;
         for(int i = n-1;i>0 && !isFinish;i--){
             isFinish = true;
-            for(int j=0;j<i;j++){
-                if(less(nums[j+1],nums[j])){
-                    swapNums(nums,j+1,j);
+            for(int j=1;j<=i;j++){
+                if(less(nums[j],nums[j-1])){
+                    swapNums(nums,j,j-1);
                     isFinish = false;
                 }
             }

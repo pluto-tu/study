@@ -15,31 +15,66 @@ public class SortTest {
 
     }
 
+    /**
+     * 选中排序
+     * @param nums
+     */
     public void selectSort(int[] nums){
         int length = nums.length;
         for(int i=0;i<length;i++){
-            int min = nums[i];
+            int min = i;
             for(int j=i+1;j<length;j++){
-                if(nums[j]<min){
-                    min = nums[j];
+                if(nums[j]<nums[min]){
+                    min = j;
                 }
             }
             swap(nums,i,min);
         }
+    }
 
+    /**
+     * 冒泡
+     * @param
+     */
+    public void ebullitionSort(int[] nums){
+        int length = nums.length;
+        boolean isFinish = false;
+        for(int i=length -1;i>0 && !isFinish;i--){
+            isFinish = true;
+            for(int j=1;j<=i;j++){
+                if(nums[j]<nums[j-1]){
+                    swap(nums,j,j-1);
+                    isFinish = false;
+                }
+            }
+        }
+    }
+
+    /**
+     * 插入
+     * @param
+     */
+    public void insertSort(int[] nums){
+        int length = nums.length;
+        for (int i=1;i<length;i++){
+            for(int j=i;j<length;j++ ){
+                if(nums[j]<nums[j-1]){
+                    swap(nums,j,j-1);
+                }
+            }
+        }
     }
 
 
     public static void main(String[] args) {
         SortTest sortTest = new SortTest();
-        int[] nums = {3, 1, 6, 2, 5, 8, 4, 7};
-        sortTest.selectSort(nums);
+       // int[] nums = {3, 1, 6, 2, 5, 8, 4, 7};
 
-
+        int[] nums = {3,1,5,6,2,4};
+        sortTest.insertSort(nums);
 
         for (int i = 0; i < nums.length; i++){
-            System.out.println(nums[i] + "--");
-
+            System.out.print(nums[i] + "--");
         }
     }
 
