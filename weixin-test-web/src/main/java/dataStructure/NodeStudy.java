@@ -68,6 +68,7 @@ public class NodeStudy {
         }
     }
 
+
     public static Node partion(Node head, Node end) {
         int key = head.data;
         Node p1 = head;

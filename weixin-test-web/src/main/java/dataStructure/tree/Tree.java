@@ -2,13 +2,15 @@ package dataStructure.tree;
 
 
 import org.apache.commons.collections.CollectionUtils;
+import org.omg.CORBA.OBJ_ADAPTER;
+import org.omg.PortableInterceptor.INACTIVE;
 
 import java.util.LinkedList;
 import java.util.Objects;
 
 /**
  * Created by tubangwu on 2018/1/27.
- *
+ * <p>
  * 二叉树的遍历
  *
  * @author tubangwu
@@ -59,8 +61,9 @@ public class Tree {
     }
 
     /**
-     *前序遍历
-      * @param treeNode
+     * 前序遍历
+     *
+     * @param treeNode
      */
     public static void topOrder(TreeNode treeNode) {
         printData(treeNode);
@@ -73,7 +76,8 @@ public class Tree {
     }
 
     /**
-     *中序遍历
+     * 中序遍历
+     *
      * @param treeNode
      */
     public static void midOrder(TreeNode treeNode) {
@@ -87,7 +91,8 @@ public class Tree {
     }
 
     /**
-     *后序遍历
+     * 后序遍历
+     *
      * @param treeNode
      */
     public static void lastOrder(TreeNode treeNode) {
@@ -102,7 +107,8 @@ public class Tree {
 
 
     /**
-     *层次遍历
+     * 层次遍历
+     *
      * @param treeNode
      */
     public static void layer(TreeNode treeNode) {

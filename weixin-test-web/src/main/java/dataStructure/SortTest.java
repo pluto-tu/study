@@ -8,7 +8,7 @@ package dataStructure;
  */
 public class SortTest {
 
-    public void swap(int[] nums, int i, int j) {
+    public static void swap(int[] nums, int i, int j) {
         int temp = nums[i];
         nums[i] = nums[j];
         nums[j] = temp;
@@ -89,7 +89,7 @@ public class SortTest {
                 swap(nums, i, j);
             }
         }
-        swap(nums, start, j);
+        swap(nums,start,j );
         quickSort(nums, start, j - 1);
         quickSort(nums, j + 1, end);
 
@@ -97,16 +97,26 @@ public class SortTest {
 
 
     public static void main(String[] args) {
-        SortTest sortTest = new SortTest();
-        // int[] nums = {3, 1, 6, 2, 5, 8, 4, 7};
 
+
+        SortTest sortTest = new SortTest();
+//        // int[] nums = {3, 1, 6, 2, 5, 8, 4, 7};
+//
         int[] nums = {3, 1, 5, 6, 2, 4};
+
         sortTest.quickSort(nums, 0, nums.length-1);
 
         for (int i = 0; i < nums.length; i++) {
             System.out.print(nums[i] + "--");
         }
+
+
     }
+
+
+
+
+
 
 
 }
